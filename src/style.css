@@ -87,7 +87,7 @@ footer{
 
 .container {
   box-sizing: border-box;
-  width: 50%;
+  width: auto;
 }
 
 .btn{
