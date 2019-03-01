@@ -102,9 +102,25 @@ border-radius: 5%;
       vertical-align: bottom;
 }
 
+
+.stars-outer {
+position: relative;
+display: inline-block;
+
+}
+
 #top {
   display: none;
 }
 #new {
   display: none;
 }
+
+/* Stars */
+#rating { font-size: 0; }
+#rating span { font-size: 40px; }
+#rating span::before { content: "☆"; }
+#rating span.active::before {content: "★"; }
+#rating span:hover { cursor: pointer; }
+
+
