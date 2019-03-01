@@ -10,14 +10,17 @@ const dataFilter = document.getElementById("data-filter");
 const movieRelease = document.getElementById("Year");
 const homeDisplay = document.getElementById("home");
 const dataMovieList = [];
-const imbId = ['tt3659388','tt0118884','tt0756683','tt0816692','tt0079945',
+const imbId = ['tt4154664','tt2527338','tt0076759',
+  'tt3659388','tt0118884','tt0756683','tt0816692','tt0079945',
   'tt2649554','tt0379786','tt0087004','tt3967856',
   'tt0087182','tt0387808','tt0123755','tt0119654',
   'tt2075340','tt4680182','tt2798920','tt2543164',
-  'tt0119177','tt0089114','tt0118929','tt0365808','tt0096251',
+  'tt0119177','tt0089114','tt0118929','tt0365808',
   'tt0084827','tt0083658', 'tt1454468', 'tt0499549',
   'tt0106062', 'tt0079501', 'tt0796366', 'tt0888496',
-  'tt0084827', 'tt0088763', 'tt0078748', 'tt3188542', 'tt2087752',
+  'tt0084827', 'tt0088763', 'tt0078748', 'tt3188542', 
+  'tt2087752','tt0096251','tt2076822',
+  'tt5968394','tt0448115','tt2274648','tt2935510','tt3741700','tt2283336'
 ];
 
 //Función para crear arrego de la Data con Fetch
@@ -39,8 +42,8 @@ const printMoviesTop = (dataMovieList) => {
 
   dataMovieList.map((dataMovieList) => {
     let nameMovies =
-      `<div class="data"><img id="${dataMovieList.Title}" src="${dataMovieList.Poster}"><h5>${dataMovieList.Title}</h5><p>${dataMovieList.Year}</p>
-    <p>${dataMovieList.imdbRating}</p> 
+      `<div class="data"><img id="${dataMovieList.Title}" src="${dataMovieList.Poster}"><h5>Title: ${dataMovieList.Title}</h5><p>Year: ${dataMovieList.Year}</p>
+    <p>Rating: ${dataMovieList.imdbRating}</p>
     <div id='rating'>
     <span></span>
     <span></span>
@@ -60,11 +63,11 @@ const printMoviesPrem = (dataMovieList) => {
   dataMovieList.map((dataMovieList) => {
     let nameMovies =
       `<div class="data"><img id="${dataMovieList.Title}" src="${dataMovieList.Poster}">
-      <h5>${dataMovieList.Title}</h5><p>${dataMovieList.Year}<br>${dataMovieList.imdbRating}</p>
+      <h5>Title: ${dataMovieList.Title}</h5><p>Year: ${dataMovieList.Year}</p>
     
     </div>`;
     sectionPremier.insertAdjacentHTML("beforeend", nameMovies);
-
+    
   })
 };
 
@@ -74,7 +77,8 @@ const printMoviesFilter = (dataMovieList) => {
   dataMovieList.map((dataMovieList) => {
     let nameMovies =
       `<div class="data"><img id="${dataMovieList.Title}" src="${dataMovieList.Poster}">
-      <h5>${dataMovieList.Title}</h5><p>${dataMovieList.Year}<br>${dataMovieList.imdbRating}</p>
+      <h5>Title: ${dataMovieList.Title}</h5><p>Year: ${dataMovieList.Year}<br>Sinopsis: ${dataMovieList.Plot}
+      </p>
     
     </div>`;
     dataFilter.insertAdjacentHTML("beforeend", nameMovies);
@@ -85,25 +89,16 @@ const printMoviesFilter = (dataMovieList) => {
 //Funciín que filtra por conincidencia en Titulo, Director o año
 const filterCoincidence = () => {
   searchLett.addEventListener("keyup", () => {
+    dataFilter.style.display="block";
+    RecomDisplay.style.display = "none";
     let searchValue = document.getElementById("search").value;
     printMoviesFilter(window.data.filterByConside(dataMovieList, searchValue));
   });
 }
 
-
-//Stars Rating
-document.querySelector('#rating').addEventListener('click', function (e) {
-  let action = 'add';
-  for (const span of this.children) {
-      span.classList[action]('active');
-      if (span === e.target) action = 'remove';
-  }
-});
-
-
-
 //Función para ordenar por calificacion de Ranking
 topTenOrder.addEventListener("click", () => {
+  dataFilter.style.display="none";
   topDisplay.style.display = "block";
   PremiDisplay.style.display = "none";
   RecomDisplay.style.display = "none";
@@ -112,9 +107,10 @@ topTenOrder.addEventListener("click", () => {
   printMoviesTop(arrayTenMovies);
 
 })
-//
+
 //Funcion para filtrar por año
 movieRelease.addEventListener("click", () => {
+  dataFilter.style.display="none";
   topDisplay.style.display = "none";
   PremiDisplay.style.display = "block";
   RecomDisplay.style.display = "none";
@@ -128,6 +124,15 @@ homeDisplay.addEventListener("click", () => {
   RecomDisplay.style.display = "block";
   
 })
+
+//Stars Rating
+document.querySelector('#rating').addEventListener('click', function (e) {
+  let action = 'add';
+  for (const span of this.children) {
+      span.classList[action]('active');
+      if (span === e.target) action = 'remove';
+  }
+});
 
 //Invocando funciónes
 dataMovie();
