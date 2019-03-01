@@ -9,15 +9,16 @@ header{
  left: 0;
 }
 
+
 body{
-  background: rgba(24,30,44,1);
-background: -moz-linear-gradient(-45deg, rgba(24,30,44,1) 0%, rgba(84,223,218,1) 100%);
-background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(24,30,44,1)), color-stop(100%, rgba(84,223,218,1)));
-background: -webkit-linear-gradient(-45deg, rgba(24,30,44,1) 0%, rgba(84,223,218,1) 100%);
-background: -o-linear-gradient(-45deg, rgba(24,30,44,1) 0%, rgba(84,223,218,1) 100%);
-background: -ms-linear-gradient(-45deg, rgba(24,30,44,1) 0%, rgba(84,223,218,1) 100%);
-background: linear-gradient(135deg, rgba(24,30,44,1) 0%, rgba(84,223,218,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#181e2c', endColorstr='#54dfda', GradientType=1 );
+  background: rgba(18,23,33,1);
+  background: -moz-linear-gradient(-45deg, rgba(18,23,33,1) 0%, rgba(18,23,33,1) 14%, rgba(36,188,183,1) 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(18,23,33,1)), color-stop(14%, rgba(18,23,33,1)), color-stop(100%, rgba(36,188,183,1)));
+  background: -webkit-linear-gradient(-45deg, rgba(18,23,33,1) 0%, rgba(18,23,33,1) 14%, rgba(36,188,183,1) 100%);
+  background: -o-linear-gradient(-45deg, rgba(18,23,33,1) 0%, rgba(18,23,33,1) 14%, rgba(36,188,183,1) 100%);
+  background: -ms-linear-gradient(-45deg, rgba(18,23,33,1) 0%, rgba(18,23,33,1) 14%, rgba(36,188,183,1) 100%);
+  background: linear-gradient(135deg, rgba(18,23,33,1) 0%, rgba(18,23,33,1) 14%, rgba(36,188,183,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#121721', endColorstr='#24bcb7', GradientType=1 );
 background-attachment: fixed;
 }
 nav{
@@ -27,10 +28,10 @@ nav{
   }
 
   section{
-    font-family: sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: white;
     text-align: center;
-    padding-top: 60px;
+    padding-top: 40%;
   }
 
   img{
@@ -52,10 +53,10 @@ footer{
 
 .search{
   text-align: center;
-opacity: 0.55;
-width: 90%;
-border-radius: 5%;
-    z-index: 100;    z-index: 100;
+  opacity: 0.55;
+  width: 90%;
+  border-radius: 5%;
+  z-index: 100;
 }
 
 .fixed-bottom {
@@ -71,11 +72,11 @@ border-radius: 5%;
 
 .data{
   position: relative;
-  background-image: url(../src/assets/images/cajita.png);
+  
   background-size: cover;
   background-position: center center;
   width: 280px;
-  height: 420px;
+  /* height: 420px; */
   color: rgb(244, 244, 248);
   display: inline-block;
   padding: 1%;
