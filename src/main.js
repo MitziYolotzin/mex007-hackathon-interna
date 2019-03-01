@@ -70,7 +70,7 @@ topTenOrder.addEventListener("click", () => {
   printMoviesTop(arrayTenMovies);
 
 })
-
+//
 //Funcion para filtrar por año
 movieRelease.addEventListener("click", () => {
   topDisplay.style.display = "none";
